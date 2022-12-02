@@ -7,7 +7,7 @@ usamos dos funciones
 update_data() - para actualizar los datos de excel
 save_to_gsheets(df) - para cargar los datos a Gsheet
 
-# Autenticación
+# Authentication
 crear servicio "credenciales" para habilitar el programa a escribir en Google Sheets. 
 
 flujo de activación
