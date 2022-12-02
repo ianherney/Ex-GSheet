@@ -17,19 +17,19 @@ def update_data():
 
     
 def save_to_gsheets(df):         
-    # Generar key.json revisar el siguiente link: 
+    # Generar key.json ver README.md 
     client = gspread.service_account('key.json')
     sheet = client.open_by_url('URL spreadsheet')
     worksheet = sheet.worksheet('NAME spreadsheet')
 
-    # convertimos el tipo de las columnas que sean datetime a string
+    # Se converte el tipo de las columnas que sean datetime a string
     for column in df.columns[df.dtypes == 'datetime64[ns]']:
         df[column] = df[column].astype(str)
 
     
     worksheet.update(
         [df.columns.values.tolist()] +
-        # reemplazamos valores no deseados [ NaN, NaT, Errors.. ] por strings vacíos    
+        # se reemplazan los valores no deseados [ NaN, NaT, Errors.. ] por strings vacíos    
          df.fillna('')
          .replace(0,'')
          .replace('NaT','')
@@ -37,7 +37,7 @@ def save_to_gsheets(df):
          .replace('Error 6','')
          .values.tolist() )
 
-# cambiar ruta por la ruta donde este alojado el excel con las consultas a TIS    
+# cambiar ruta por la ruta donde este alojado el excel con las consultas
 df1 = pd.read_excel('path.../w_file.py', engine='openpyxl')    
 
 if __name__ == "__main__":
