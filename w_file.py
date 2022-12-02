@@ -12,7 +12,7 @@ import json
 
 def update_data():
     xlApp = win32.Dispatch('Excel.Application')
-    # cambiar ruta por la ruta donde este alojado el excel con las consultas a TIS
+    # cambiar ruta por la ruta donde este alojado el excel con las consultas
     wb = xlApp.Workbooks.Open('path.../w_file.p')
 
     
