@@ -12,11 +12,17 @@ save_to_gsheets(df) - para cargar los datos a Gsheet
 crear servicio "credenciales" para habilitar el programa a escribir en Google Sheets. 
 
 flujo de activación
+
 +ir a Google Cloud Platform [GCP]('https://console.cloud.google.com/welcome?') y crear un proyecto nuevo o seleccionar uno existente. 
+
 +Si nunca ha usado GCP, los paso son:
+
 +En la barra de Buscar productos y recursos buscar Google Drive API y habilitarla.
+
 +En la barra de Buscar productos y recursos buscar Google Sheets API y habilitarla.
+
 +En la barra de Buscar productos y recursos buscar cuentas de servicio, en esa página:
+
 + Crear cuenta de servicio, completar el formulario; con el nombre de la cuenta de servicio es suficiente.
 
 Una vez creada, seleccionarla para entrar en los detalles de la cuenta.
